@@ -100,9 +100,15 @@
     for (let offset = 0; offset < 8; offset += 1) {
       const candidate = new Date(now);
       candidate.setDate(now.getDate() + offset);
-      candidate.setHours(17, 30, 0, 0);
+      const day = candidate.getDay();
 
-      if ((candidate.getDay() === 2 || candidate.getDay() === 4) && candidate > now) {
+      if (day === 0) {
+        candidate.setHours(9, 0, 0, 0);
+      } else {
+        candidate.setHours(17, 30, 0, 0);
+      }
+
+      if ((day === 0 || day === 2 || day === 4) && candidate > now) {
         candidates.push(candidate);
       }
     }
