@@ -40,13 +40,25 @@
     const percentage = available > 0 ? Math.min(100, (top / available) * 100) : 0;
 
     if (header) header.classList.toggle("is-scrolled", top > 20);
-    if (progress) progress.style.width = percentage + "%";
+    if (progress) progress.style.transform = "scaleX(" + percentage / 100 + ")";
     if (mobileCta) mobileCta.classList.toggle("is-hidden", top > available - 500);
   }
 
-  updateScrollUi();
-  window.addEventListener("scroll", updateScrollUi, { passive: true });
-  window.addEventListener("resize", updateScrollUi);
+  let scrollUpdateScheduled = false;
+
+  function scheduleScrollUiUpdate() {
+    if (scrollUpdateScheduled) return;
+    scrollUpdateScheduled = true;
+
+    window.requestAnimationFrame(function () {
+      updateScrollUi();
+      scrollUpdateScheduled = false;
+    });
+  }
+
+  scheduleScrollUiUpdate();
+  window.addEventListener("scroll", scheduleScrollUiUpdate, { passive: true });
+  window.addEventListener("resize", scheduleScrollUiUpdate);
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealElements = document.querySelectorAll(".reveal");
