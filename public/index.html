@@ -1,12 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CC Grøndal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b1f">
+
+  <title>CC Grøndal | Landevejscykling og fællesskab i København</title>
+  <meta
+    name="description"
+    content="Kør landevejscykling med CC Grøndal i København. Fællestræning tirsdag og torsdag, gode ben, trygge hjul og et stærkt socialt fællesskab."
+  >
+  <link rel="canonical" href="https://www.xn--ccgrndal-84a.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cykle Club Grøndal">
+  <meta property="og:title" content="CC Grøndal | Fællesskab i hvert tråd">
+  <meta
+    property="og:description"
+    content="Landevejscykling i København med faste træninger, plads til udvikling og et stærkt fællesskab."
+  >
+  <meta property="og:url" content="https://www.xn--ccgrndal-84a.com/">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "name": "Cykle Club Grøndal",
+    "alternateName": "CC Grøndal",
+    "url": "https://www.xn--ccgrndal-84a.com/",
+    "email": "cykelklubben@outlook.dk",
+    "sport": "Road cycling",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hvidkildevej 64",
+      "postalCode": "2400",
+      "addressLocality": "København NV",
+      "addressCountry": "DK"
+    },
+    "sameAs": [
+      "https://www.facebook.com/groups/ccgrondal/"
+    ]
+  }
+  </script>
+
+  <script src="/script.js" defer></script>
 </head>
+
 <body>
-  <h1>CC Grøndal</h1>
-  <p>Ny hjemmeside er på vej.</p>
+  <a class="skip-link" href="#main-content">Gå til indhold</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="CC Grøndal – forsiden">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="27"></circle>
+          <path d="M18 40a14 14 0 1 1 0-16"></path>
+          <path d="M46 24a14 14 0 1 1 0 16"></path>
+          <path d="M24 32h16M29 23l-5 9 8 8 8-8-5-9"></path>
+        </svg>
+        <span>
+          <strong>CC Grøndal</strong>
+          <small>Cykling · København</small>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Åbn menu"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Hovedmenu" data-nav>
+        <a href="#klubben">Klubben</a>
+        <a href="#traening">Træning</a>
+        <a href="#medlemskab">Medlemskab</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#kontakt">Kom med</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero">
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <div class="route-line route-line-one" aria-hidden="true"></div>
+      <div class="route-line route-line-two" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span>Landevejscykling i København</p>
+          <h1>
+            Fællesskab
+            <em>i hvert tråd.</em>
+          </h1>
+          <p class="hero-lead">
+            Vi kører for formen, farten og det gode selskab. Hop med på hjul
+            hos CC Grøndal og oplev København og Nordsjælland fra den bedste
+            side af styret.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:cykelklubben@outlook.dk?subject=Jeg%20vil%20gerne%20med%20på%20en%20prøvetur">
+              Kom med på en prøvetur
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"></path></svg>
+            </a>
+            <a class="button button-ghost" href="#traening">Se træningen</a>
+          </div>
+
+          <ul class="hero-facts" aria-label="Nøgletal for træningen">
+            <li><strong>27</strong><span>km/t cirka</span></li>
+            <li><strong>60–70</strong><span>km pr. tur</span></li>
+            <li><strong>2×</strong><span>om ugen</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Næste træning og rutedata">
+          <div class="speed-ring" aria-hidden="true">
+            <svg viewBox="0 0 360 360">
+              <circle class="speed-track" cx="180" cy="180" r="150"></circle>
+              <circle class="speed-value" cx="180" cy="180" r="150"></circle>
+            </svg>
+            <span class="speed-number">27</span>
+            <span class="speed-unit">km/t</span>
+          </div>
+
+          <div class="ride-dashboard">
+            <div class="dashboard-topline">
+              <span class="live-dot"></span>
+              <span>Næste fællestræning</span>
+            </div>
+            <p class="next-ride" data-next-ride>Tirsdag kl. 17.30</p>
+            <div class="mini-route" aria-hidden="true">
+              <span></span><i></i><i></i><i></i><b></b>
+            </div>
+            <div class="dashboard-meta">
+              <span>Grøndalscentret</span>
+              <span>Samlet start</span>
+            </div>
+          </div>
+
+          <div class="bike-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 72">
+              <circle cx="25" cy="50" r="17"></circle>
+              <circle cx="95" cy="50" r="17"></circle>
+              <path d="M25 50l21-30 18 30H25zm21-30h18l13 30M64 50l18-32h15M43 20h-8"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div>
+          <span>København</span><i></i><span>Fart</span><i></i><span>Fællesskab</span><i></i><span>Landevej</span><i></i>
+          <span>København</span><i></i><span>Fart</span><i></i><span>Fællesskab</span><i></i><span>Landevej</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="season-banner" aria-labelledby="season-title">
+      <div class="container season-layout reveal">
+        <div>
+          <p class="section-kicker">Sæsonstart 2026</p>
+          <h2 id="season-title">Vi ruller ud søndag 29. marts.</h2>
+        </div>
+        <div class="season-details">
+          <span><strong>09.00</strong> start</span>
+          <span><strong>Grøndalscentret</strong> mødested</span>
+        </div>
+        <a class="text-link" href="#kontakt">Tag med <span>→</span></a>
+      </div>
+    </section>
+
+    <section id="klubben" class="section section-light">
+      <div class="container intro-grid">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Klubben</p>
+          <h2>Gode ben.<br>Endnu bedre selskab.</h2>
+        </div>
+
+        <div class="intro-copy reveal">
+          <p class="large-copy">
+            CC Grøndal er en københavnsk cykelklub, hvor det sociale samvær
+            på landevejen fylder lige så meget som watt, puls og placering i
+            rækken.
+          </p>
+          <p>
+            Vi træner sammen, deltager i motionsløb og skaber oplevelser på
+            cyklen. Du behøver ikke være professionel – men du skal kunne lide
+            at køre stærkt, sikkert og sammen med andre.
+          </p>
+
+          <div class="values-grid">
+            <article>
+              <span>01</span>
+              <h3>Trygge hjul</h3>
+              <p>Vi kører samlet, kommunikerer tydeligt og passer på hinanden.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Plads til udvikling</h3>
+              <p>Bliv stærkere, mere sikker og bedre til at køre i gruppe.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Social fart</h3>
+              <p>Vi jagter gode ture og gode grin – ikke kun segmenter.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="traening" class="section section-dark">
+      <div class="container">
+        <div class="section-heading section-heading-row reveal">
+          <div>
+            <p class="section-kicker">Træning</p>
+            <h2>Fast rytme.<br>Frihed på vejen.</h2>
+          </div>
+          <p>
+            Vi mødes ved indgangen til Grøndalscentret og kører ud som gruppe.
+            Ruten tilpasses vejr, vind og dagens ben.
+          </p>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="schedule-card reveal">
+            <div class="day">TIR</div>
+            <div>
+              <p class="time">17<span>.30</span></p>
+              <h3>Hverdagsfart</h3>
+              <p>60–70 km · cirka 27 km/t</p>
+            </div>
+            <span class="card-arrow">↗</span>
+          </article>
+
+          <article class="schedule-card reveal">
+            <div class="day">TOR</div>
+            <div>
+              <p class="time">17<span>.30</span></p>
+              <h3>Ugens andet tråd</h3>
+              <p>60–70 km · cirka 27 km/t</p>
+            </div>
+            <span class="card-arrow">↗</span>
+          </article>
+
+          <article class="meeting-card reveal">
+            <p class="section-kicker">Mødested</p>
+            <h3>Grøndalscentret</h3>
+            <address>Hvidkildevej 64<br>2400 København NV</address>
+            <a
+              class="text-link"
+              href="https://www.google.com/maps/search/?api=1&query=Hvidkildevej+64+2400+København+NV"
+              rel="external"
+            >
+              Åbn i kort <span>→</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="requirements reveal">
+          <div>
+            <p class="section-kicker">Kan jeg være med?</p>
+            <h3>Tre ting før du hopper på hjul.</h3>
+          </div>
+          <ol>
+            <li>
+              <span>01</span>
+              <div><strong>Landevejscykel</strong><p>Dropstyr og udvendige gear. Klikpedaler er anbefalet, men ikke et krav til første tur.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong>Grundform</strong><p>Du kan køre cirka 50 km alene med omkring 28 km/t i gennemsnit.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong>Sikkerhed</strong><p>Hjelm er obligatorisk. Medbring drikkedunk, energi, sundhedskort og kontaktoplysninger.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="medlemskab" class="section section-accent">
+      <div class="container membership-layout">
+        <div class="membership-copy reveal">
+          <p class="section-kicker">Medlemskab 2026</p>
+          <h2>Mere cykling.<br>Mere fællesskab.</h2>
+          <p>
+            Start med en prøvetur. Hvis hjulene, tempoet og stemningen passer,
+            er du klar til at blive en del af klubben.
+          </p>
+          <a class="button button-dark" href="mailto:cykelklubben@outlook.dk?subject=Medlemskab%20af%20CC%20Grøndal">
+            Skriv til klubben
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"></path></svg>
+          </a>
+        </div>
+
+        <div class="price-card reveal">
+          <p>Årligt kontingent</p>
+          <div class="price"><strong>400</strong><span>kr.</span></div>
+          <p class="price-note">Et helt år med klubben.</p>
+          <ul>
+            <li>Fællestræning to gange om ugen</li>
+            <li>Klubarrangementer gennem året</li>
+            <li>Fælles deltagelse i motionsløb</li>
+            <li>Startgebyr til to udvalgte løb</li>
+            <li>Risiko for markant bedre form</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-light">
+      <div class="container faq-layout">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Godt at vide</p>
+          <h2>Spørgsmål før første tur?</h2>
+          <p>Vi har samlet de mest almindelige. Du kan altid skrive til os, hvis du er i tvivl.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <details>
+            <summary>Skal jeg være i topform?<span>+</span></summary>
+            <p>Nej. Du skal dog være i så god grundform, at du kan køre cirka 50 km alene med omkring 28 km/t.</p>
+          </details>
+          <details>
+            <summary>Kan jeg starte uden klikpedaler?<span>+</span></summary>
+            <p>Ja. Du kan godt tage din første tur uden. På sigt vil klikpedaler gøre det lettere at køre stabilt og effektivt i gruppen.</p>
+          </details>
+          <details>
+            <summary>Hvad sker der, hvis jeg ikke kan holde tempoet?<span>+</span></summary>
+            <p>Skriv til os inden turen, så vi kan afstemme forventningerne. Vi prioriterer sikker kommunikation og et samlet hold.</p>
+          </details>
+          <details>
+            <summary>Kan jeg komme på en prøvetur?<span>+</span></summary>
+            <p>Ja – det er den bedste måde at mærke klubben på. Send os en mail, så finder vi en passende træningsdag.</p>
+          </details>
+          <details>
+            <summary>Hvor finder jeg nyheder og ændringer?<span>+</span></summary>
+            <p>Følg CC Grøndals Facebook-gruppe for aktuelle meldinger om ture, vejr og arrangementer.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact-section">
+      <div class="contact-pattern" aria-hidden="true"></div>
+      <div class="container contact-inner reveal">
+        <p class="section-kicker">Klar til at trille med?</p>
+        <h2>Din næste gode tur<br>starter i Grøndal.</h2>
+        <p>Fortæl kort om din erfaring og dit nuværende niveau. Så hjælper vi dig godt ind i gruppen.</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:cykelklubben@outlook.dk?subject=Prøvetur%20med%20CC%20Grøndal">
+            cykelklubben@outlook.dk
+          </a>
+          <a class="button button-ghost" href="https://www.facebook.com/groups/ccgrondal/" rel="external">
+            Facebook-gruppen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <a class="brand brand-footer" href="#top" aria-label="CC Grøndal – tilbage til toppen">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="27"></circle>
+          <path d="M18 40a14 14 0 1 1 0-16"></path>
+          <path d="M46 24a14 14 0 1 1 0 16"></path>
+          <path d="M24 32h16M29 23l-5 9 8 8 8-8-5-9"></path>
+        </svg>
+        <span><strong>CC Grøndal</strong><small>Cykling · København</small></span>
+      </a>
+
+      <div class="footer-links">
+        <a href="#klubben">Klubben</a>
+        <a href="#traening">Træning</a>
+        <a href="#medlemskab">Medlemskab</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <p>© <span data-year>2026</span> Cykle Club Grøndal</p>
+    </div>
+  </footer>
+
+  <a class="mobile-ride-cta" href="mailto:cykelklubben@outlook.dk?subject=Prøvetur%20med%20CC%20Grøndal">
+    Kom med på en prøvetur <span>→</span>
+  </a>
 </body>
 </html>

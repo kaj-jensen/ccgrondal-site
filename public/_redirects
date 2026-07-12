@@ -1,0 +1,12 @@
+# Redirect old WordPress pages to relevant sections on the new one-page site
+/vedtaegter/ /#medlemskab 301
+/privatlivspolitik-for-cc-groendal/ /#kontakt 301
+/klubtoej/ /#medlemskab 301
+/kontakt-cykle-club-groendal/ /#kontakt 301
+/cykel-ruter/ /#traening 301
+/traening/ /#traening 301
+/events/ /#traening 301
+/rabat-og-pris-hos-xtrainer/ /#medlemskab 301
+
+# Canonical homepage
+/index.html / 301
