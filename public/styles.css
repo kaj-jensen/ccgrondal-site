@@ -329,6 +329,17 @@ h2 {
   gap: clamp(50px, 8vw, 110px);
 }
 
+.hero-layout > *,
+.intro-grid > *,
+.section-heading-row > *,
+.schedule-grid > *,
+.requirements > *,
+.membership-layout > *,
+.faq-layout > *,
+.footer-layout > * {
+  min-width: 0;
+}
+
 .eyebrow,
 .section-kicker {
   margin-bottom: 20px;
@@ -1357,7 +1368,7 @@ h2 {
   }
 
   .container {
-    width: min(100% - 28px, var(--container));
+    width: min(var(--container), calc(100% - 28px));
   }
 
   .nav-toggle {
@@ -1498,37 +1509,17 @@ h2 {
   }
 
   .mobile-ride-cta {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    z-index: 950;
-    min-height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 18px;
-    color: var(--ink);
-    background: var(--lime);
-    border: 1px solid rgba(7, 27, 31, 0.18);
-    border-radius: 999px;
-    box-shadow: 0 14px 35px rgba(7, 27, 31, 0.3);
-    font-weight: 900;
-    transition: transform 180ms ease, opacity 180ms ease;
-  }
-
-  .mobile-ride-cta.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(90px);
-  }
-
-  .site-footer {
-    padding-bottom: 105px;
+    display: none;
   }
 }
 
 @media (max-width: 520px) {
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
+  }
+
   .brand small {
     display: none;
   }
@@ -1540,6 +1531,11 @@ h2 {
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 12.5vw, 3.8rem);
+    line-height: 0.9;
   }
 
   .hero-facts {
