@@ -1557,7 +1557,7 @@ h2 {
   }
 
   .hero-visual {
-    min-height: 420px;
+    min-height: 460px;
   }
 
   .bike-badge {
@@ -1567,8 +1567,8 @@ h2 {
   }
 
   .ride-dashboard {
-    bottom: 0;
-    width: 88%;
+    bottom: -52px;
+    width: min(310px, 88%);
   }
 
   .season-details {
