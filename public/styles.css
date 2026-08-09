@@ -1159,7 +1159,7 @@ h2 {
   display: none;
 }
 
-.faq-list summary span {
+.faq-list .faq-toggle {
   width: 34px;
   height: 34px;
   flex: 0 0 auto;
@@ -1171,7 +1171,7 @@ h2 {
   transition: transform 180ms ease;
 }
 
-.faq-list details[open] summary span {
+.faq-list details[open] .faq-toggle {
   transform: rotate(45deg);
 }
 

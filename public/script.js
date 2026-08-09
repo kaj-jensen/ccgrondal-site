@@ -143,5 +143,38 @@
     nextRide.textContent = formatted.charAt(0).toUpperCase() + formatted.slice(1);
   }
 
+  function getSeasonStartDate(year) {
+    const lastDayOfMarch = new Date(year, 2, 31, 12, 0, 0, 0);
+    const lastSundayOfMarch = new Date(lastDayOfMarch);
+    lastSundayOfMarch.setDate(lastDayOfMarch.getDate() - lastDayOfMarch.getDay());
+
+    const firstSundayAfterSummerTimeStarts = new Date(lastSundayOfMarch);
+    firstSundayAfterSummerTimeStarts.setDate(lastSundayOfMarch.getDate() + 7);
+    firstSundayAfterSummerTimeStarts.setHours(9, 0, 0, 0);
+
+    return firstSundayAfterSummerTimeStarts;
+  }
+
+  function getNextSeasonStartDate(now) {
+    const thisYear = getSeasonStartDate(now.getFullYear());
+    return now < thisYear ? thisYear : getSeasonStartDate(now.getFullYear() + 1);
+  }
+
+  const seasonDate = document.querySelector("[data-season-date]");
+  const seasonYear = document.querySelector("[data-season-year]");
+  const nextSeasonStart = getNextSeasonStartDate(new Date());
+
+  if (seasonDate && seasonYear) {
+    const formattedSeasonDate = new Intl.DateTimeFormat("da-DK", {
+      weekday: "long",
+      day: "numeric",
+      month: "long"
+    }).format(nextSeasonStart);
+
+    seasonDate.textContent = formattedSeasonDate;
+    seasonDate.dateTime = nextSeasonStart.toISOString().slice(0, 10);
+    seasonYear.textContent = String(nextSeasonStart.getFullYear());
+  }
+
   if (year) year.textContent = String(new Date().getFullYear());
 })();
