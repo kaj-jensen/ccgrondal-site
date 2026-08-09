@@ -16,6 +16,8 @@
   --shadow: 0 24px 70px rgba(7, 27, 31, 0.14);
   --container: 1180px;
   --header-height: 88px;
+  --section-space: clamp(80px, 8vw, 128px);
+  --section-space-compact: clamp(56px, 6vw, 88px);
 }
 
 *,
@@ -768,7 +770,7 @@ h2 {
 }
 
 .section {
-  padding: clamp(90px, 10vw, 150px) 0;
+  padding: var(--section-space) 0;
 }
 
 .section-light {
@@ -999,8 +1001,8 @@ h2 {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 80px;
-  margin-top: 90px;
-  padding-top: 80px;
+  margin-top: var(--section-space-compact);
+  padding-top: var(--section-space-compact);
   border-top: 1px solid var(--line-dark);
 }
 
@@ -1182,7 +1184,7 @@ h2 {
 
 .contact-section {
   position: relative;
-  padding: clamp(100px, 13vw, 190px) 0;
+  padding: var(--section-space) 0;
   overflow: hidden;
   color: #fff;
   text-align: center;
@@ -1338,6 +1340,7 @@ h2 {
   .membership-layout,
   .faq-layout {
     grid-template-columns: 1fr;
+    gap: var(--section-space-compact);
   }
 
   .values-grid {
@@ -1365,6 +1368,8 @@ h2 {
 @media (max-width: 800px) {
   :root {
     --header-height: 74px;
+    --section-space: 72px;
+    --section-space-compact: 48px;
   }
 
   .container {
@@ -1472,6 +1477,7 @@ h2 {
   .section-heading-row {
     grid-template-columns: 1fr;
     gap: 25px;
+    margin-bottom: var(--section-space-compact);
   }
 
   .values-grid,
@@ -1489,6 +1495,8 @@ h2 {
 
   .requirements {
     gap: 30px;
+    margin-top: var(--section-space-compact);
+    padding-top: var(--section-space-compact);
   }
 
   .price-card {
@@ -1514,6 +1522,11 @@ h2 {
 }
 
 @media (max-width: 520px) {
+  :root {
+    --section-space: 64px;
+    --section-space-compact: 40px;
+  }
+
   h1,
   h2,
   h3 {
