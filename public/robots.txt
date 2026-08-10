@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.xn--ccgrndal-84a.com/sitemap.xml
+Sitemap: https://xn--ccgrndal-84a.com/sitemap.xml
