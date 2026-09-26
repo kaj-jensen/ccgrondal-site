@@ -489,6 +489,8 @@ h2 {
   position: relative;
   min-height: 570px;
   display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
   place-items: center;
 }
 
@@ -541,7 +543,7 @@ h2 {
   z-index: 2;
   margin-top: -20px;
   font-family: "Arial Black", system-ui, sans-serif;
-  font-size: clamp(5.5rem, 10vw, 8rem);
+  font-size: clamp(3.6rem, 6vw, 5.8rem);
   line-height: 1;
   letter-spacing: -0.08em;
 }
@@ -557,10 +559,11 @@ h2 {
 }
 
 .ride-dashboard {
-  position: absolute;
-  right: -5%;
-  bottom: 3%;
+  position: relative;
+  z-index: 3;
+  justify-self: end;
   width: min(310px, 78%);
+  margin-top: -58px;
   padding: 22px;
   color: var(--ink);
   background: rgba(244, 245, 237, 0.95);
@@ -1473,7 +1476,7 @@ h2 {
   }
 
   .ride-dashboard {
-    right: 0;
+    margin-right: 0;
   }
 
   .season-layout {
@@ -1596,8 +1599,8 @@ h2 {
   }
 
   .ride-dashboard {
-    bottom: -52px;
     width: min(310px, 88%);
+    margin-top: -42px;
   }
 
   .season-details {
