@@ -140,14 +140,12 @@
   const now = new Date();
   const weekdayPause = weekdayRidesArePaused(now);
   const weekdayRideCards = document.querySelectorAll("[data-weekday-ride]");
-  const weekdayPauseNotice = document.querySelector("[data-weekday-pause]");
   const weeklyFrequency = document.querySelector("[data-weekly-frequency]");
   const weeklyFrequencyLabel = document.querySelector("[data-weekly-frequency-label]");
 
   weekdayRideCards.forEach(function (card) {
     card.hidden = weekdayPause;
   });
-  if (weekdayPauseNotice) weekdayPauseNotice.hidden = !weekdayPause;
   if (weeklyFrequency) weeklyFrequency.textContent = weekdayPause ? "1×" : "3×";
   if (weeklyFrequencyLabel) weeklyFrequencyLabel.textContent = weekdayPause ? "om ugen nu" : "om ugen";
 
