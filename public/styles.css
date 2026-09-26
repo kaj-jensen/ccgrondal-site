@@ -880,6 +880,22 @@ h2 {
   gap: 18px;
 }
 
+.schedule-notice {
+  margin: -34px 0 32px;
+  padding: 18px 22px;
+  color: var(--ink);
+  background: var(--lime);
+  border-radius: var(--radius-sm);
+}
+
+.schedule-notice strong {
+  font-weight: 950;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 .schedule-card,
 .meeting-card {
   position: relative;

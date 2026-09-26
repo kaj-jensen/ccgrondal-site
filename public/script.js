@@ -105,8 +105,14 @@
     });
   }
 
-  function getNextTrainingDate() {
-    const now = new Date();
+  const weekdayPauseStart = new Date(2026, 8, 27);
+  const weekdayPauseEnd = new Date(2027, 3, 4);
+
+  function weekdayRidesArePaused(date) {
+    return date >= weekdayPauseStart && date < weekdayPauseEnd;
+  }
+
+  function getNextTrainingDate(now) {
     const candidates = [];
 
     for (let offset = 0; offset < 8; offset += 1) {
@@ -120,7 +126,10 @@
         candidate.setHours(17, 30, 0, 0);
       }
 
-      if ((day === 0 || day === 2 || day === 4) && candidate > now) {
+      const isSundayRide = day === 0;
+      const isWeekdayRide = (day === 2 || day === 4) && !weekdayRidesArePaused(candidate);
+
+      if ((isSundayRide || isWeekdayRide) && candidate > now) {
         candidates.push(candidate);
       }
     }
@@ -128,8 +137,22 @@
     return candidates.sort(function (a, b) { return a - b; })[0];
   }
 
+  const now = new Date();
+  const weekdayPause = weekdayRidesArePaused(now);
+  const weekdayRideCards = document.querySelectorAll("[data-weekday-ride]");
+  const weekdayPauseNotice = document.querySelector("[data-weekday-pause]");
+  const weeklyFrequency = document.querySelector("[data-weekly-frequency]");
+  const weeklyFrequencyLabel = document.querySelector("[data-weekly-frequency-label]");
+
+  weekdayRideCards.forEach(function (card) {
+    card.hidden = weekdayPause;
+  });
+  if (weekdayPauseNotice) weekdayPauseNotice.hidden = !weekdayPause;
+  if (weeklyFrequency) weeklyFrequency.textContent = weekdayPause ? "1×" : "3×";
+  if (weeklyFrequencyLabel) weeklyFrequencyLabel.textContent = weekdayPause ? "om ugen nu" : "om ugen";
+
   const nextRide = document.querySelector("[data-next-ride]");
-  const nextTraining = getNextTrainingDate();
+  const nextTraining = getNextTrainingDate(now);
 
   if (nextRide && nextTraining) {
     const formatted = new Intl.DateTimeFormat("da-DK", {
@@ -162,7 +185,7 @@
 
   const seasonDate = document.querySelector("[data-season-date]");
   const seasonYear = document.querySelector("[data-season-year]");
-  const nextSeasonStart = getNextSeasonStartDate(new Date());
+  const nextSeasonStart = getNextSeasonStartDate(now);
 
   if (seasonDate && seasonYear) {
     const formattedSeasonDate = new Intl.DateTimeFormat("da-DK", {
@@ -176,5 +199,5 @@
     seasonYear.textContent = String(nextSeasonStart.getFullYear());
   }
 
-  if (year) year.textContent = String(new Date().getFullYear());
+  if (year) year.textContent = String(now.getFullYear());
 })();
