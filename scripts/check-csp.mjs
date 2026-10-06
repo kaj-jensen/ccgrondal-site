@@ -19,3 +19,6 @@ for(const file of readdirSync(folder).filter(f=>f.endsWith('.html'))){
  }
 }
 console.log(`CSP allows ${count} intended inline scripts and keeps arbitrary inline execution blocked.`);
+
+const workerPolicy=JSON.parse(readFileSync(path.join(root,"worker/security-policy.json"),"utf8")).contentSecurityPolicy;
+if(workerPolicy!==policy)throw new Error("Worker CSP must match the checked static policy");

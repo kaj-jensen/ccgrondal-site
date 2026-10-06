@@ -2,6 +2,9 @@
   "name": "ccgrondal-site",
   "compatibility_date": "2026-07-12",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "main": "./worker/index.js"
 }
