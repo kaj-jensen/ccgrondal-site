@@ -1639,3 +1639,15 @@ h2 {
     transform: none;
   }
 }
+
+/* Optional analytics controls */
+
+  .analytics-consent[hidden] { display: none !important; }
+  .analytics-consent { position: fixed; z-index: 1000; bottom: 12px; left: 12px; right: 12px; margin: auto; max-width: 700px; padding: 16px 20px; background: #fbfaf6; color: #071c16; border: 1px solid #0b3b2e; border-radius: 10px; box-shadow: 0 4px 24px #071c1626; font: 14px/1.5 Arial, sans-serif; }
+  .analytics-consent p { margin: 0 0 12px; }
+  .analytics-consent > div { display: flex; gap: 12px; flex-wrap: wrap; }
+  .analytics-consent button { flex: 1; min-height: 44px; padding: 8px 16px; border: 1px solid #0b3b2e; border-radius: 5px; background: #fbfaf6; color: #071c16; font: inherit; font-weight: 600; cursor: pointer; }
+  .analytics-consent button:hover { background: #e7ede7; }
+  .analytics-consent button:focus-visible, [data-analytics-preferences]:focus-visible { outline: 3px solid #2e9eb3; outline-offset: 3px; }
+  [data-analytics-preferences] { background: transparent; border: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; padding: 8px 0; min-height: 44px; }
+  body:has([data-analytics-panel]:not([hidden])) .mobile-ride-cta { visibility: hidden; }

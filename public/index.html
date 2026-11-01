@@ -25,13 +25,6 @@
   <meta property="og:url" content="https://xn--ccgrndal-84a.com/">
   <meta name="twitter:card" content="summary">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVJHLM4TBW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TVJHLM4TBW');
-  </script>
 
   <script type="application/ld+json">
   {
@@ -417,12 +410,30 @@
         <a href="#kontakt">Kontakt</a>
       </div>
 
-      <p>© <span data-year>2026</span> Cykle Club Grøndal</p>
+      <p>© <span data-year>2026</span> Cykle Club Grøndal<br><button type="button" data-analytics-preferences hidden>Cookievalg</button></p>
     </div>
   </footer>
 
   <a class="mobile-ride-cta" href="mailto:cykelklubben@outlook.dk?subject=Prøvetur%20med%20CC%20Grøndal">
     Kom med på en prøvetur <span>→</span>
   </a>
+  <aside class="analytics-consent" data-analytics-panel hidden aria-label="Cookievalg">
+    <p>Vi bruger valgfrie Google Analytics-cookies til at forstå besøg. Du kan afvise dem og bruge hele hjemmesiden.</p>
+    <div>
+      <button type="button" data-analytics-choice="denied">Afvis</button>
+      <button type="button" data-analytics-choice="granted">Tillad statistik</button>
+    </div>
+  </aside>
+  <template data-analytics-scripts>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVJHLM4TBW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+      gtag('js', new Date());
+      gtag('config', 'G-TVJHLM4TBW', {allow_google_signals: false, allow_ad_personalization_signals: false, cookie_flags: 'SameSite=Lax;Secure'});
+    </script>
+  </template>
+  <script src="/analytics-consent.js" defer></script>
 </body>
 </html>

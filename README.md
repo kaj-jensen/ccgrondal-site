@@ -12,6 +12,10 @@ Modern static one-page website for Cykle Club Grøndal.
 
 ## Deployment
 
+Google Analytics loads only after an explicit choice in the cookie panel. Visitors can refuse, or reopen Cookievalg in the footer to withdraw permission. Choices expire after 180 days. Withdrawing clears analytics cookies and reloads the page to stop analytics; Cloudflare security cookies are preserved. The site remains usable without analytics.
+
+Run `node scripts/check-csp.mjs`, `node scripts/check-framework-policy.mjs`, and `node --test scripts/analytics-consent.test.mjs` before publication.
+
 The `main` branch is connected to Cloudflare Workers. Every push automatically deploys the contents of `public`.
 
 ## Domain launch checklist
