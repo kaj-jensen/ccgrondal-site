@@ -1,0 +1,13 @@
+{
+  "repository": "kaj-jensen/ccgrondal-site",
+  "branch": "main",
+  "worker": "ccgrondal-site",
+  "account": "d29f48cc069d51d0787fc306533039e1",
+  "productionURL": "https://xn--ccgrndal-84a.com",
+  "config": "wrangler.jsonc",
+  "artifact": "public",
+  "paths": [
+    "/"
+  ],
+  "private": false
+}
