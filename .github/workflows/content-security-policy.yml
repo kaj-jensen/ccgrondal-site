@@ -1,5 +1,9 @@
 name: Content security policy
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request: null
 permissions:
   contents: read
 jobs:
@@ -14,3 +18,7 @@ jobs:
           node-version: 24
       - run: node scripts/check-csp.mjs
       - run: node --test scripts/analytics-consent.test.mjs
+    timeout-minutes: 10
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
