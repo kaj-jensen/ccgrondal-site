@@ -1,6 +1,7 @@
+import { handleUnexpected } from './unexpected-error.js';
 import policy from "./security-policy.json";
 
-export default {
+const worker = {
   async fetch(request, env) {
     const pathname = new URL(request.url).pathname;
     const documentRequest = request.headers.get("accept")?.includes("text/html")
@@ -30,3 +31,7 @@ export default {
       .transform(new Response(response.body, { status: response.status, statusText: response.statusText, headers }));
   },
 };
+
+export default { ...worker, fetch(request, env, context) {
+  return handleUnexpected(() => worker.fetch(request, env, context), 'An unexpected error occurred. Please try again later.');
+} };

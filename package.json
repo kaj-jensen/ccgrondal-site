@@ -6,7 +6,7 @@
     "prebuild": "node scripts/check-framework-policy.mjs",
     "build": "node scripts/check-csp.mjs",
     "test:browser": "playwright test",
-    "release:checks": "node scripts/check-csp.mjs && node --test scripts/analytics-consent.test.mjs && node --test tests/release-policy.test.mjs",
+    "release:checks": "node scripts/check-csp.mjs && node --test scripts/analytics-consent.test.mjs && node --test tests/release-policy.test.mjs && node --test worker/unexpected-error.test.js",
     "release:prepare": "node scripts/prepare-release.mjs",
     "deploy": "gh workflow run browser-checks.yml --ref main --repo kaj-jensen/ccgrondal-site"
   },
